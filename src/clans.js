@@ -1,26 +1,33 @@
 
-function random() {
-	return 4;
+var nextRandom;
+
+function setNextRandom(number) {
+	nextRandom = number;
 }
 
-function ataque(ev1, ev2, at, d) {
+function random() {
+	return nextRandom;
+}
+
+function ataque(vampiros, at, d) {
 
   var dado = random();
 
-	var vampiros = {
-		vampiro1: ev1,
-	  vampiro2: ev2
+	var vampirosResultante = {
+		vampiro1: vampiros.vampiro1,
+	  vampiro2: vampiros.vampiro2
 	};
 
 	if (dado <= at) {
-		vampiros.vampiro1 += d;
-		vampiros.vampiro2 -= d;
+		vampirosResultante.vampiro1 += d;
+		vampirosResultante.vampiro2 -= d;
 	} else {
-		vampiros.vampiro2 += d;
-		vampiros.vampiro1 -= d;
+		vampirosResultante.vampiro2 += d;
+		vampirosResultante.vampiro1 -= d;
 	}
 
-	return vampiros;
+	return vampirosResultante;
 }
 
 module.exports.ataque = ataque;
+module.exports.setNextRandom = setNextRandom;
