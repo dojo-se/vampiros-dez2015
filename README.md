@@ -12,3 +12,5 @@ npm test
 ```
 
 [Read about Mocha](http://mochajs.org/)
+
+Problema: http://br.spoj.com/problems/VAMPIROS/
